@@ -216,10 +216,6 @@ export const Requests = () => {
 							<option value='In delivery'>In delivery</option>
 							<option value='Delivered'>Delivered</option>
 						</SelectFilters>
-						{/* <BtnFilterAplication>Apply filters</BtnFilterAplication>
-						<BtnFilterAplication style={{ background: 'transparent' }}>
-							Remove filters
-						</BtnFilterAplication> */}
 					</FiltersRequests>
 					<RequestGlobal>
 						<HeaderRequest>
@@ -247,17 +243,24 @@ export const Requests = () => {
 									<h3 className='status_request'>{client.status}</h3>
 									<h3 className='name_client_request'>{client.name}</h3>
 									<h3 className='value_request'>{client.value}</h3>
-									<BtnAprove>
-										<TfiArrowRight size={20} color={`${Theme.color.primary}`} />
-										Approve
-									</BtnAprove>
-									<BtnCancel>
-										<AiOutlineClose
-											size={20}
-											color={`${Theme.color.primary}`}
-										/>
-										{client.status === 'Pending' ? 'Cancel' : 'in preparation'}
-									</BtnCancel>
+									<div className='container-btn'>
+										<BtnAprove>
+											<TfiArrowRight
+												size={20}
+												color={`${Theme.color.primary}`}
+											/>
+											Approve
+										</BtnAprove>
+										<BtnCancel>
+											<AiOutlineClose
+												size={20}
+												color={`${Theme.color.primary}`}
+											/>
+											{client.status === 'Pending'
+												? 'Cancel'
+												: 'in preparation'}
+										</BtnCancel>
+									</div>
 								</Fade>
 							</RequestFull>
 						))}

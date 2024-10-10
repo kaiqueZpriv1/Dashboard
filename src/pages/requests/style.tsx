@@ -102,7 +102,7 @@ export const HeaderRequest = styled.div`
 
 export const RequestFull = styled.div`
 	display: grid;
-	grid-template-columns: 280px 280px 280px 280px 280px 280px 280px;
+	grid-template-columns: 280px 280px 280px 280px 280px 380px;
 	align-items: center;
 	border-bottom: 1px solid ${Theme.color.room};
 	padding: 10px 20px;
@@ -155,8 +155,11 @@ export const RequestFull = styled.div`
 			overflow: hidden;
 		}
 	}
-	
-	
+	.container-btn {
+		display: flex;
+		align-items: center;
+		gap: 110px;
+	}
 `;
 
 export const BtnAprove = styled.button`
@@ -170,7 +173,7 @@ export const BtnAprove = styled.button`
 	border-radius: 5px;
 	font-family: ${Theme.source.secundary};
 	font-weight: ${Theme.widthFont.regular};
-	width: 150px;
+	/* width: 150px; */
 	padding: 5px;
 	cursor: pointer;
 	&::selection {
@@ -187,7 +190,7 @@ export const BtnCancel = styled.button`
 	font-family: ${Theme.source.secundary};
 	font-weight: ${Theme.widthFont.regular};
 	cursor: pointer;
-	width: 100px;
+	/* width: 100px; */
 	&::selection {
 		overflow: hidden;
 	}
