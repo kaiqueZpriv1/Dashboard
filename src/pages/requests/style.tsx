@@ -106,8 +106,8 @@ export const RequestFull = styled.div`
 	align-items: center;
 	border-bottom: 1px solid ${Theme.color.room};
 	padding: 10px 20px;
+	cursor: pointer;
 	&:hover {
-		/* background: ${Theme.color.fifth}; */
 		background: #141414;
 	}
 	.id_request {
@@ -214,6 +214,8 @@ export const HeaderDetailsRequest = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 10px 5px;
+	border-bottom: 1px solid ${Theme.color.fifth};
 `;
 
 export const TitleHeaderRequest = styled.h3`
@@ -224,4 +226,16 @@ export const TitleHeaderRequest = styled.h3`
 	&::selection {
 		overflow: hidden;
 	}
+`;
+
+export const ContainerDetailsRequest = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	.data_time {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	
 `;
