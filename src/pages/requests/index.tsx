@@ -1,12 +1,15 @@
 import {
 	BtnAprove,
 	BtnCancel,
+	ClientInfoRequest,
 	Container,
 	ContainerDetailsRequest,
+	ContentMainDetails,
 	ContentRequest,
 	FiltersRequests,
 	HeaderDetailsRequest,
 	HeaderRequest,
+	OrderRequestContent,
 	RequestDetails,
 	RequestFull,
 	RequestGlobal,
@@ -30,6 +33,25 @@ interface Client {
 	status: string;
 	name: string;
 	value: string;
+	details?: {
+		time: string;
+		email: string;
+		phone: string;
+		payment: string;
+		order?: {
+			item: string;
+			amount: string;
+		};
+		deliveryMethod: string;
+		deliveryTime: string;
+		address: {
+			Street: string;
+			CEP: string;
+			number: string;
+			neighborhood: string;
+			state: string;
+		};
+	};
 }
 
 export const Requests = () => {
@@ -168,16 +190,15 @@ export const Requests = () => {
 							</RequestFull>
 						))}
 					</RequestGlobal>
-					{isDetailsOpen && selectedRequestId && (
-						<RequestDetailsModal
-							request={
-								ListClient.find((client) => client.id === selectedRequestId) ||
-								null
-							}
-							onClose={handleCloseDetails}
-						/>
-					)}
 				</ContentRequest>
+			{isDetailsOpen && selectedRequestId && (
+				<RequestDetailsModal
+					request={
+						ListClient.find((client) => client.id === selectedRequestId) || null
+					}
+					onClose={handleCloseDetails}
+				/>
+			)}
 			</Container>
 		</>
 	);
@@ -201,6 +222,63 @@ const RequestDetailsModal = ({
 						<TitleHeaderRequest>{request.id}</TitleHeaderRequest>
 						<AiOutlineClose color='#fafafa' size={25} onClick={onClose} />
 					</HeaderDetailsRequest>
+					<ContentMainDetails>
+						<ClientInfoRequest>
+							<div className='container_info_client'>
+								<h3 className='info_name'>Name:</h3>
+								<h3 className='info_client'>{request.name}</h3>
+							</div>
+							<div className='container_info_client'>
+								<h3 className='info_name'>Phone:</h3>
+								<h3 className='info_client'>{request.details?.phone}</h3>
+							</div>
+							<div className='container_info_client'>
+								<h3 className='info_name'>Address:</h3>
+								<h3 className='info_client'>
+									{request.details?.address.Street}
+								</h3>
+								<h3 className='info_client'>
+									{request.details?.address.number}
+								</h3>
+								<h3 className='info_client'>
+									{request.details?.address.neighborhood}
+								</h3>
+								<h3 className='info_client'>{request.details?.address.CEP}</h3>
+								<h3 className='info_client'>
+									{request.details?.address.state}
+								</h3>
+							</div>
+							<div className='container_info_client'>
+								<h3 className='info_name'>E-mail:</h3>
+								<h3 className='info_client'>{request.details?.email}</h3>
+							</div>
+							<div className='container_info_client'>
+								<h3 className='info_name'>Delivery time: </h3>
+								<h3 className='info_client'>{request.details?.deliveryTime}</h3>
+							</div>
+							<div className='container_info_client'>
+								<h3 className='info_name'>Delivery method:</h3>
+								<h3 className='info_client'>
+									{request.details?.deliveryMethod}
+								</h3>
+							</div>
+							<div className='container_info_client'>
+								<h3 className='info_name'>Payment</h3>
+								<h3 className='info_client'>{request.details?.payment}</h3>
+							</div>
+						</ClientInfoRequest>
+						<OrderRequestContent>
+							<h3 className='order_title'>Order:</h3>
+							<div className='order_container'>
+								<h3 className='order_request'>
+									{request.details?.order?.item}
+								</h3>
+								<h3 className='order_request'>
+									{request.details?.order?.amount}
+								</h3>
+							</div>
+						</OrderRequestContent>
+					</ContentMainDetails>
 				</ContainerDetailsRequest>
 			)}
 		</RequestDetails>

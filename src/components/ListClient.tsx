@@ -8,13 +8,16 @@ export const ListClient = [
 		name: 'Arthur William Pereira',
 		value: 'R$ 71,00',
 		details: {
-			phone: '(11) 93332-3486',
+			time: '20:31',
 			email: 'kakamelo141205@gmail.com',
+			phone: '(11) 93332-3486',
 			payment: 'Cartão Debito',
-			order: '(1) X-tudo, (1) CocaCola 600ml',
+			order: {
+				item: '(1) X-tudo',
+				amount: '2',
+			},
 			deliveryMethod: 'Entrega a domicilio',
 			deliveryTime: '45 min',
-			time: '20:31',
 			address: {
 				Street: 'Rua Laide Barbosa Da Silva',
 				CEP: '05734-190',
