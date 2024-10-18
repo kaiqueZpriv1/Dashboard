@@ -1,5 +1,3 @@
-
-
 export const ListClient = [
 	{
 		id: '8f3t2b94hr7qsd5',
@@ -9,21 +7,21 @@ export const ListClient = [
 		value: 'R$ 71,00',
 		details: {
 			time: '20:31',
-			email: 'kakamelo141205@gmail.com',
-			phone: '(11) 93332-3486',
-			payment: 'Cartão Debito',
+			email: 'joao.silva@example.com',
+			phone: '(11) 98765-4321',
+			payment: 'Cartão de Crédito',
 			order: {
-				item: '(1) X-tudo',
-				amount: '2',
+				item: 'Pizza Calabresa',
+				amount: 'R$45,00',
 			},
-			deliveryMethod: 'Entrega a domicilio',
-			deliveryTime: '45 min',
+			deliveryMethod: 'Entrega',
+			deliveryTime: '21:00',
 			address: {
-				Street: 'Rua Laide Barbosa Da Silva',
-				CEP: '05734-190',
-				number: '27',
-				neighborhood: 'Parque Rebouças',
-				state: 'São Paulo',
+				Street: 'Rua das Flores',
+				CEP: '01234-567',
+				number: '123',
+				neighborhood: 'Jardim Paulista',
+				state: 'SP',
 			},
 		},
 	},
@@ -33,6 +31,25 @@ export const ListClient = [
 		status: 'Pending',
 		name: 'Ana Clara Rodrigues',
 		value: 'R$ 63,00',
+		details: {
+			time: '18:45',
+			email: 'maria.souza@example.com',
+			phone: '(21) 91234-5678',
+			payment: 'Pix',
+			order: {
+				item: 'Sushi Combo',
+				amount: 'R$89,90',
+			},
+			deliveryMethod: 'Retirada',
+			deliveryTime: '19:00',
+			address: {
+				Street: 'Avenida Atlântica',
+				CEP: '22070-000',
+				number: '450',
+				neighborhood: 'Copacabana',
+				state: 'RJ',
+			},
+		},
 	},
 	{
 		id: '7b1m4c92ks5rhe3',
@@ -40,6 +57,25 @@ export const ListClient = [
 		status: 'Pending',
 		name: 'Gabriel Lucas Silva',
 		value: 'R$ 29,00',
+		details: {
+			time: '12:10',
+			email: 'carlos.lima@example.com',
+			phone: '(31) 91234-0987',
+			payment: 'Boleto Bancário',
+			order: {
+				item: 'Combo Hambúrguer e Fritas',
+				amount: 'R$35,00',
+			},
+			deliveryMethod: 'Entrega',
+			deliveryTime: '12:40',
+			address: {
+				Street: 'Rua das Palmeiras',
+				CEP: '30150-290',
+				number: '55',
+				neighborhood: 'Centro',
+				state: 'MG',
+			},
+		},
 	},
 	{
 		id: '6a0l3d80it4qgd2',
@@ -47,6 +83,25 @@ export const ListClient = [
 		status: 'Pending',
 		name: 'Beatriz Sofia Santos',
 		value: 'R$ 82,00',
+		details: {
+			time: '21:00',
+			email: 'ana.mendes@example.com',
+			phone: '(51) 99988-7766',
+			payment: 'Cartão de Débito',
+			order: {
+				item: 'Frango Assado',
+				amount: 'R$60,00',
+			},
+			deliveryMethod: 'Entrega',
+			deliveryTime: '21:30',
+			address: {
+				Street: 'Rua Borges de Medeiros',
+				CEP: '90020-280',
+				number: '1010',
+				neighborhood: 'Centro Histórico',
+				state: 'RS',
+			},
+		},
 	},
 	{
 		id: '5z9k2c79hs3pfd1',
@@ -54,6 +109,25 @@ export const ListClient = [
 		status: 'Pending',
 		name: 'Leonardo Henrique Costa',
 		value: 'R$ 96,00',
+		details: {
+			time: '13:30',
+			email: 'pedro.gomes@example.com',
+			phone: '(85) 99777-6543',
+			payment: 'Dinheiro',
+			order: {
+				item: 'Salada Caesar',
+				amount: 'R$25,00',
+			},
+			deliveryMethod: 'Retirada',
+			deliveryTime: '13:45',
+			address: {
+				Street: 'Rua Costa Barros',
+				CEP: '60160-280',
+				number: '765',
+				neighborhood: 'Aldeota',
+				state: 'CE',
+			},
+		},
 	},
 	{
 		id: '4y8j1b68gt2ogc0',
@@ -61,6 +135,25 @@ export const ListClient = [
 		status: 'Delivered',
 		name: 'Camila Isabella Alves',
 		value: 'R$ 52,00',
+		details: {
+			time: '19:45',
+			email: 'fernanda.pereira@example.com',
+			phone: '(19) 99876-5432',
+			payment: 'Cartão de Crédito',
+			order: {
+				item: 'Pizza Quatro Queijos',
+				amount: 'R$55,00',
+			},
+			deliveryMethod: 'Entrega',
+			deliveryTime: '20:15',
+			address: {
+				Street: 'Avenida Brasil',
+				CEP: '13070-150',
+				number: '500',
+				neighborhood: 'Vila Teixeira',
+				state: 'SP',
+			},
+		},
 	},
 	{
 		id: '3x7i0a57fu1nhb9',
@@ -68,6 +161,25 @@ export const ListClient = [
 		status: 'In delivery',
 		name: 'Matheus Eduardo Santos',
 		value: 'R$ 91,00',
+		details: {
+			time: '11:30',
+			email: 'laura.rodrigues@example.com',
+			phone: '(61) 99955-4433',
+			payment: 'Pix',
+			order: {
+				item: 'Pastel de Carne',
+				amount: 'R$12,00',
+			},
+			deliveryMethod: 'Retirada',
+			deliveryTime: '11:45',
+			address: {
+				Street: 'Rua dos Engenheiros',
+				CEP: '70300-110',
+				number: '220',
+				neighborhood: 'Asa Sul',
+				state: 'DF',
+			},
+		},
 	},
 	{
 		id: '2w6h9z46ev0mg8',
@@ -75,6 +187,25 @@ export const ListClient = [
 		status: 'Cancel',
 		name: 'Laura Vitória Ferreira',
 		value: 'R$ 73,00',
+		details: {
+			time: '16:20',
+			email: 'gabriel.mattos@example.com',
+			phone: '(27) 98866-1122',
+			payment: 'Cartão de Débito',
+			order: {
+				item: 'Torta de Frango',
+				amount: 'R$30,00',
+			},
+			deliveryMethod: 'Entrega',
+			deliveryTime: '16:50',
+			address: {
+				Street: 'Rua da Praia',
+				CEP: '29060-320',
+				number: '300',
+				neighborhood: 'Praia do Canto',
+				state: 'ES',
+			},
+		},
 	},
 	{
 		id: '1v5g8y35du0lf7',
@@ -82,6 +213,25 @@ export const ListClient = [
 		status: 'In preparation',
 		name: 'Pedro Rafael Oliveira',
 		value: 'R$ 25,00',
+		details: {
+			time: '22:15',
+			email: 'lucas.almeida@example.com',
+			phone: '(12) 99999-8888',
+			payment: 'Dinheiro',
+			order: {
+				item: 'Combo de Churrasco',
+				amount: 'R$75,00',
+			},
+			deliveryMethod: 'Entrega',
+			deliveryTime: '22:45',
+			address: {
+				Street: 'Rua Tiradentes',
+				CEP: '12050-250',
+				number: '77',
+				neighborhood: 'Centro',
+				state: 'SP',
+			},
+		},
 	},
 	{
 		id: '0u4f7x24ct0ke6',
@@ -89,5 +239,24 @@ export const ListClient = [
 		status: 'Concluded',
 		name: 'Mariana Eduarda Gomes',
 		value: 'R$ 61,00',
+		details: {
+			time: '10:50',
+			email: 'juliana.costa@example.com',
+			phone: '(43) 98899-6655',
+			payment: 'Boleto Bancário',
+			order: {
+				item: 'Suco Natural de Laranja',
+				amount: 'R$10,00',
+			},
+			deliveryMethod: 'Retirada',
+			deliveryTime: '11:10',
+			address: {
+				Street: 'Rua das Palmeiras',
+				CEP: '86050-270',
+				number: '100',
+				neighborhood: 'Jardim Maringá',
+				state: 'PR',
+			},
+		},
 	},
 ];

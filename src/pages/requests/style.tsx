@@ -162,45 +162,12 @@ export const RequestFull = styled.div`
 	}
 `;
 
-export const BtnAprove = styled.button`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
-	border: 1px solid ${Theme.color.fifth};
-	background: transparent;
-	color: ${Theme.color.primary};
-	border-radius: 5px;
-	font-family: ${Theme.source.secundary};
-	font-weight: ${Theme.widthFont.regular};
-	/* width: 150px; */
-	padding: 5px;
-	cursor: pointer;
-	&::selection {
-		overflow: hidden;
-	}
-`;
-export const BtnCancel = styled.button`
-	display: flex;
-	align-items: center;
-	border: none;
-	background: transparent;
-	color: ${Theme.color.primary};
-	border-radius: 5px;
-	font-family: ${Theme.source.secundary};
-	font-weight: ${Theme.widthFont.regular};
-	cursor: pointer;
-	/* width: 100px; */
-	&::selection {
-		overflow: hidden;
-	}
-`;
-
 export const RequestDetails = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 1000px;
 	position: absolute;
+	top: 20%;
+	left: 20%;
 	background-color: rgba(0, 0, 0, 0.13);
 	backdrop-filter: blur(10px);
 	border-radius: 10px;
@@ -229,11 +196,15 @@ export const TitleHeaderRequest = styled.h3`
 		overflow: hidden;
 	}
 `;
-
+export const ContainerRequestDetails = styled.div`
+	display: grid;
+	grid-template-columns: 700px 400px;
+`;
 export const ContentMainDetails = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 20px 5px;
+	width: 750px;
 `;
 
 export const ClientInfoRequest = styled.div`
@@ -262,7 +233,6 @@ export const OrderRequestContent = styled.div`
 	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
-	/* gap: 5px; */
 	.order_title {
 		font-size: ${Theme.size.medium};
 		font-family: ${Theme.source.primary};
@@ -279,5 +249,46 @@ export const OrderRequestContent = styled.div`
 		font-family: ${Theme.source.secundary};
 		color: ${Theme.color.primary};
 		font-weight: ${Theme.widthFont.light};
+	}
+`;
+
+export const ActionDetails = styled.div`
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	border-left: 1px solid ${Theme.color.fifth};
+	.title_actions {
+		font-size: ${Theme.size.medium};
+		font-family: ${Theme.source.primary};
+		font-weight: ${Theme.widthFont.regular};
+		color: ${Theme.color.secundary};
+	}
+`;
+
+export const ActionsButtons = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	.btn_action {
+		gap: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid ${Theme.color.fifth};
+		background: transparent;
+		border-radius: 5px;
+		padding: 5px 10px;
+		font-size: ${Theme.size.small};
+		font-weight: ${Theme.widthFont.light};
+		font-family: ${Theme.source.secundary};
+		color: ${Theme.color.primary};
+		width: 200px;
+	}
+	.btn_action:hover {
+		transform: scale(1.1);
+		transition: 1s;
 	}
 `;

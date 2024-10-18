@@ -1,9 +1,10 @@
 import {
-	BtnAprove,
-	BtnCancel,
+	ActionDetails,
+	ActionsButtons,
 	ClientInfoRequest,
 	Container,
 	ContainerDetailsRequest,
+	ContainerRequestDetails,
 	ContentMainDetails,
 	ContentRequest,
 	FiltersRequests,
@@ -23,6 +24,8 @@ import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { TfiArrowRight } from 'react-icons/tfi';
 import { FaHome } from 'react-icons/fa';
+import { TbMailQuestion } from 'react-icons/tb';
+
 import { Link } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
 import { ListClient } from '../../components/ListClient';
@@ -108,6 +111,7 @@ export const Requests = () => {
 		setSelectedRequestId('');
 		setIsDetailsOpen(false);
 	};
+
 	return (
 		<>
 			<Container>
@@ -168,37 +172,21 @@ export const Requests = () => {
 									<h3 className='status_request'>{client.status}</h3>
 									<h3 className='name_client_request'>{client.name}</h3>
 									<h3 className='value_request'>{client.value}</h3>
-									<div className='container-btn'>
-										<BtnAprove>
-											<TfiArrowRight
-												size={20}
-												color={`${Theme.color.primary}`}
-											/>
-											Approve
-										</BtnAprove>
-										<BtnCancel>
-											<AiOutlineClose
-												size={20}
-												color={`${Theme.color.primary}`}
-											/>
-											{client.status === 'Pending'
-												? 'Cancel'
-												: 'in preparation'}
-										</BtnCancel>
-									</div>
+									<div className='container-btn'></div>
 								</Fade>
 							</RequestFull>
 						))}
 					</RequestGlobal>
 				</ContentRequest>
-			{isDetailsOpen && selectedRequestId && (
-				<RequestDetailsModal
-					request={
-						ListClient.find((client) => client.id === selectedRequestId) || null
-					}
-					onClose={handleCloseDetails}
-				/>
-			)}
+				{isDetailsOpen && selectedRequestId && (
+					<RequestDetailsModal
+						request={
+							ListClient.find((client) => client.id === selectedRequestId) ||
+							null
+						}
+						onClose={handleCloseDetails}
+					/>
+				)}
 			</Container>
 		</>
 	);
@@ -222,63 +210,98 @@ const RequestDetailsModal = ({
 						<TitleHeaderRequest>{request.id}</TitleHeaderRequest>
 						<AiOutlineClose color='#fafafa' size={25} onClick={onClose} />
 					</HeaderDetailsRequest>
-					<ContentMainDetails>
-						<ClientInfoRequest>
-							<div className='container_info_client'>
-								<h3 className='info_name'>Name:</h3>
-								<h3 className='info_client'>{request.name}</h3>
-							</div>
-							<div className='container_info_client'>
-								<h3 className='info_name'>Phone:</h3>
-								<h3 className='info_client'>{request.details?.phone}</h3>
-							</div>
-							<div className='container_info_client'>
-								<h3 className='info_name'>Address:</h3>
-								<h3 className='info_client'>
-									{request.details?.address.Street}
-								</h3>
-								<h3 className='info_client'>
-									{request.details?.address.number}
-								</h3>
-								<h3 className='info_client'>
-									{request.details?.address.neighborhood}
-								</h3>
-								<h3 className='info_client'>{request.details?.address.CEP}</h3>
-								<h3 className='info_client'>
-									{request.details?.address.state}
-								</h3>
-							</div>
-							<div className='container_info_client'>
-								<h3 className='info_name'>E-mail:</h3>
-								<h3 className='info_client'>{request.details?.email}</h3>
-							</div>
-							<div className='container_info_client'>
-								<h3 className='info_name'>Delivery time: </h3>
-								<h3 className='info_client'>{request.details?.deliveryTime}</h3>
-							</div>
-							<div className='container_info_client'>
-								<h3 className='info_name'>Delivery method:</h3>
-								<h3 className='info_client'>
-									{request.details?.deliveryMethod}
-								</h3>
-							</div>
-							<div className='container_info_client'>
-								<h3 className='info_name'>Payment</h3>
-								<h3 className='info_client'>{request.details?.payment}</h3>
-							</div>
-						</ClientInfoRequest>
-						<OrderRequestContent>
-							<h3 className='order_title'>Order:</h3>
-							<div className='order_container'>
-								<h3 className='order_request'>
-									{request.details?.order?.item}
-								</h3>
-								<h3 className='order_request'>
-									{request.details?.order?.amount}
-								</h3>
-							</div>
-						</OrderRequestContent>
-					</ContentMainDetails>
+					<ContainerRequestDetails>
+						<ContentMainDetails>
+							<ClientInfoRequest>
+								<div className='container_info_client'>
+									<h3 className='info_name'>Name:</h3>
+									<h3 className='info_client'>{request.name}</h3>
+								</div>
+								<div className='container_info_client'>
+									<h3 className='info_name'>Phone:</h3>
+									<h3 className='info_client'>{request.details?.phone}</h3>
+								</div>
+								<div className='container_info_client'>
+									<h3 className='info_name'>Address:</h3>
+									<h3 className='info_client'>
+										{request.details?.address.Street}
+									</h3>
+									<h3 className='info_client'>
+										{request.details?.address.number}
+									</h3>
+									<h3 className='info_client'>
+										{request.details?.address.neighborhood}
+									</h3>
+									<h3 className='info_client'>
+										{request.details?.address.CEP}
+									</h3>
+									<h3 className='info_client'>
+										{request.details?.address.state}
+									</h3>
+								</div>
+								<div className='container_info_client'>
+									<h3 className='info_name'>E-mail:</h3>
+									<h3 className='info_client'>{request.details?.email}</h3>
+								</div>
+								<div className='container_info_client'>
+									<h3 className='info_name'>Delivery time: </h3>
+									<h3 className='info_client'>
+										{request.details?.deliveryTime}
+									</h3>
+								</div>
+								<div className='container_info_client'>
+									<h3 className='info_name'>Delivery method:</h3>
+									<h3 className='info_client'>
+										{request.details?.deliveryMethod}
+									</h3>
+								</div>
+								<div className='container_info_client'>
+									<h3 className='info_name'>Payment</h3>
+									<h3 className='info_client'>{request.details?.payment}</h3>
+								</div>
+							</ClientInfoRequest>
+							<OrderRequestContent>
+								<h3 className='order_title'>Order:</h3>
+								<div className='order_container'>
+									<h3 className='order_request'>
+										{request.details?.order?.item}
+									</h3>
+									<h3 className='order_request'>
+										{request.details?.order?.amount}
+									</h3>
+								</div>
+							</OrderRequestContent>
+						</ContentMainDetails>
+						<ActionDetails
+							style={{
+								display:
+									request.status === 'Cancel' || request.status === 'Concluded'
+										? 'none'
+										: 'flex',
+							}}>
+							<h3 className='title_actions'>Actions:</h3>
+							<ActionsButtons>
+								<button
+									className='btn_action'
+									style={{
+										background: `${Theme.color.secundary}`,
+										display: request.status === 'Cancel' ? 'none' : 'flex',
+									}}
+									onClick={onClose}>
+									<TfiArrowRight size={20} color={`${Theme.color.primary}`} />
+									{request.status === 'Pending' ? 'Approve' : 'Deliver'}
+								</button>
+								<button className='btn_action'>
+									<AiOutlineClose size={20} color={`${Theme.color.primary}`} />
+									{request.status === 'Pending' ? 'Cancel' : 'in preparation'}
+								</button>
+								<button className='btn_action'>
+									<TbMailQuestion size={20} color={`${Theme.color.primary}`} />
+									Question
+								</button>
+							</ActionsButtons>
+						</ActionDetails>
+					</ContainerRequestDetails>
 				</ContainerDetailsRequest>
 			)}
 		</RequestDetails>
